@@ -1,0 +1,14 @@
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  @include flexCenter();
+  justify-content: space-between;
+  padding: 50px;
+  background: #000;
+  height: 50px;
+  color: #fff;
+}
