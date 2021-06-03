@@ -1,0 +1,4 @@
+export const REGISTER = "REGISER";
+export const REGISTER_INIT = "REGISER_INIT";
+export const REGISTER_SUCESS = "REGISER_SUCCESS";
+export const REGISTER_FAIL = "REGISER_FAIL";

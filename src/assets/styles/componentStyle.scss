@@ -1,0 +1,55 @@
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.header {
+  @include flexCenter();
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #000;
+  padding: 0 30px;
+
+  .webpageName {
+    margin-top: 40px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-family: "Monotype Corsiva";
+  }
+
+  .nav-items {
+    justify-content: space-between;
+  }
+
+  .nav-items-text {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 10px;
+  }
+}
+
+.content {
+  @include flexCenter();
+  margin: 50px 0;
+
+  .login-form {
+    max-width: 300px;
+  }
+  .login-form-forgot {
+    float: right;
+  }
+  .ant-col-rtl .login-form-forgot {
+    float: left;
+  }
+  .login-form-button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
