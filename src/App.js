@@ -18,7 +18,6 @@ function App() {
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/register" component={RegisterPage} />
         <Route exact path="/adminDashboard" component={AdminDashboard} />
-        <Route exact path="/allBooks" component={BookListing} />
       </Switch>
     </Router>
   );

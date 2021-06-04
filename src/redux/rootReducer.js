@@ -3,6 +3,7 @@ import { authorReducers } from "./authors/reducers";
 import { bookReducers } from "./books/reducers";
 import { loginReducer } from "./login/reducers";
 import { registerReducer } from "./register/reducers";
+import { rolesReducer } from "./roles/reducers";
 import { usersReducer } from "./users/reducers";
 
 const rootReducers = combineReducers({
@@ -11,6 +12,7 @@ const rootReducers = combineReducers({
   booksData: bookReducers,
   authorsData: authorReducers,
   usersData: usersReducer,
+  rolesData: rolesReducer,
 });
 
 export default rootReducers;

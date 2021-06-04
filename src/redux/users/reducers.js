@@ -7,6 +7,7 @@ import {
 const initState = {
   allUsers: [],
 };
+
 export const usersReducer = (state = initState, { type, payload }) => {
   switch (type) {
     case GET_USERS_INIT:
@@ -24,6 +25,6 @@ export const usersReducer = (state = initState, { type, payload }) => {
       };
 
     default:
-      break;
+      return state;
   }
 };

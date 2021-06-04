@@ -15,17 +15,20 @@ const columns = [
     title: "ISBN",
     dataIndex: "isbn",
     key: "isbn",
+    width: 200,
   },
 
   {
     title: "Number of Copies",
     dataIndex: "numberOfCopies",
     key: "numberOfCopies",
+    width: 200,
   },
   {
     title: "Stock",
     dataIndex: "stock",
     key: "stock",
+    width: 200,
   },
   {
     title: "Author",
