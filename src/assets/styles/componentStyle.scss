@@ -39,6 +39,12 @@
   @include flexCenter();
   margin: 50px 0;
 
+  .welcomeText {
+    font-size: 2rem;
+    font-family: "Arial";
+    font-weight: 900;
+  }
+
   .login-form {
     max-width: 300px;
   }
@@ -52,4 +58,17 @@
     width: 100%;
     margin-bottom: 10px;
   }
+}
+
+.tabsData {
+  @include flexCenter();
+
+  margin: 50px;
+  font-weight: bolder;
+}
+
+.mainContainer {
+  @include flexCenter();
+  flex-direction: column;
+  margin: 20px;
 }

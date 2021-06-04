@@ -4,9 +4,10 @@ export const init = (type) => {
   };
 };
 
-export const success = (type) => {
+export const success = (type, payload) => {
   return {
     type: `${type}_SUCCESS`,
+    payload,
   };
 };
 

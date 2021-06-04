@@ -10,7 +10,7 @@ export const loginAuth = (values) => {
     const response = await postService(URL, values);
     if (response.isSuccess) {
       const token = response.data.token;
-      localStorage.setItem("userToken", token);
+      localStorage.setItem("usertoken", token);
       dispatch(success(LOGIN, response.data));
       window.location.href = "/adminDashboard";
     } else {

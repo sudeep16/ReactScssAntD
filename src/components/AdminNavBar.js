@@ -1,4 +1,6 @@
 import React from "react";
+import { Avatar } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 
 const AdminNavBar = () => {
   return (
@@ -9,7 +11,9 @@ const AdminNavBar = () => {
       <div className="webpageName">
         <p>Library Management</p>
       </div>
-      <div className="nav-items"></div>
+      <div className="nav-items">
+        <Avatar size="large" icon={<UserOutlined />} />
+      </div>
     </>
   );
 };
