@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Form, Input, Button } from "antd";
 import { Select } from "antd";
+import { useSelector, useDispatch } from "react-redux";
+import { getAllAuthors } from "../../../redux/authors/actions";
+import { addBook } from "../../../redux/books/actions";
 
 const { Option } = Select;
 
@@ -20,17 +23,16 @@ const tailLayout = {
 };
 
 const AddBookComponent = () => {
+  const { allAuthors } = useSelector((state) => state.authorsData);
+  const dispatch = useDispatch();
+
   const onFinish = (values) => {
-    console.log("Success:", values);
+    dispatch(addBook(values));
   };
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
-
-  function handleChange(value) {
-    console.log(`selected ${value}`);
-  }
 
   return (
     <Form
@@ -45,6 +47,7 @@ const AddBookComponent = () => {
         rules={[
           {
             required: true,
+            min: 15,
             message: "Please input book isbn number !",
           },
         ]}
@@ -91,14 +94,11 @@ const AddBookComponent = () => {
         <Input />
       </Form.Item>
       <Form.Item label="Author" name="author">
-        <Select
-          defaultValue="Select an Author"
-          style={{ width: 370 }}
-          onChange={handleChange}
-        >
-          <Option value="jack">Jack</Option>
-          <Option value="lucy">Lucy</Option>
-          <Option value="Yiminghe">yiminghe</Option>
+        <Select defaultValue="Select an Author" style={{ width: 370 }}>
+          {allAuthors.map((authors) => {
+            const { _id, firstName, lastName } = authors;
+            return <Option value={_id}>{firstName + " " + lastName}</Option>;
+          })}
         </Select>
       </Form.Item>
       <Form.Item {...tailLayout}>

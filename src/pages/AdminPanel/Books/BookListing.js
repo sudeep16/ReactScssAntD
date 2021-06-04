@@ -4,9 +4,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAllBooks } from "../../../redux/books/actions";
 import BookComponent from "./BookComponent";
 import AddBookComponent from "./AddBookComponent";
+import { getAllAuthors } from "../../../redux/authors/actions";
 
 const BookListing = () => {
   const { allBooks } = useSelector((state) => state.booksData);
+  const { allAuthors } = useSelector((state) => state.authorsData);
+
   const dispatch = useDispatch();
 
   const [visible, setVisible] = useState(false);
@@ -14,6 +17,12 @@ const BookListing = () => {
   useEffect(() => {
     dispatch(getAllBooks());
   }, []);
+
+  useEffect(() => {
+    dispatch(getAllAuthors());
+  }, []);
+
+  // console.log("All Author", allAuthors);
 
   const showDrawer = () => {
     setVisible(true);

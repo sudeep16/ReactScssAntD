@@ -55,7 +55,7 @@ const columns = [
 
 const BookComponent = () => {
   const { allBooks } = useSelector((state) => state.booksData);
-  console.log(allBooks);
+  //   console.log(allBooks);
   return <Table columns={columns} dataSource={allBooks} />;
 };
 

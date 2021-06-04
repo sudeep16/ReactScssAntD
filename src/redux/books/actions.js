@@ -1,7 +1,7 @@
 import thunk from "redux-thunk";
 import { init, finish, success } from "../../services/commonTypes";
 import { BookService } from "./api";
-import { DELETE_BOOK, GET_BOOKS } from "./constants";
+import { ADD_BOOK, DELETE_BOOK, GET_BOOKS } from "./constants";
 
 const bookService = new BookService();
 export const getAllBooks = () => {
@@ -18,9 +18,24 @@ export const getAllBooks = () => {
   };
 };
 
+export const addBook = (values) => {
+  return async (dispatch) => {
+    dispatch(init(ADD_BOOK));
+    const response = await bookService.addBook(values);
+    dispatch(finish(ADD_BOOK));
+    if (response.isSuccess) {
+      //   console.log(response.data.data);
+      dispatch(success(ADD_BOOK, response.data.data));
+      window.location.href = "/adminDashboard";
+      //   history.push("/adminDashboard");
+    } else if (!response.isSuccess) {
+      // dispatch(error(response.errorMessage));
+    }
+  };
+};
+
 export const deleteBook = (id) => {
   return async (dispatch) => {
-    debugger;
     const response = await bookService.deleteBook(id);
     if (response.isSuccess) {
       //   console.log(response.data.data);

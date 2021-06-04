@@ -11,19 +11,11 @@ const { Header, Content } = Layout;
 
 const LoginPage = () => {
   const dispatch = useDispatch();
-  const [loginValues, setLoginValues] = useState({
-    username: "",
-    password: "",
-  });
-
-  const handleChange = (e) => {
-    setLoginValues(e.target.value);
-  };
 
   const onFinish = (values) => {
     dispatch(loginAuth(values));
 
-    console.log("Received values of form: ", values);
+    // console.log("Received values of form: ", values);
   };
 
   return (
@@ -45,8 +37,6 @@ const LoginPage = () => {
           >
             <Input
               prefix={<UserOutlined className="site-form-item-icon" />}
-              value={loginValues.username}
-              onChange={handleChange}
               placeholder="Username"
             />
           </Form.Item>
@@ -62,8 +52,6 @@ const LoginPage = () => {
             <Input
               prefix={<LockOutlined className="site-form-item-icon" />}
               type="password"
-              value={loginValues.password}
-              onChange={handleChange}
               placeholder="Password"
             />
           </Form.Item>

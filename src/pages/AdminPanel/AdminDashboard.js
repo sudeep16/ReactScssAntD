@@ -5,7 +5,7 @@ import BookListing from "./Books/BookListing";
 const { TabPane } = Tabs;
 
 function callback(key) {
-  console.log(key);
+  // console.log(key);
 }
 
 const AdminDashboard = () => {
