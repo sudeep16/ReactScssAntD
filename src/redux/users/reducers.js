@@ -1,4 +1,5 @@
 import {
+  DELETE_USER,
   GET_USERS_FINISH,
   GET_USERS_INIT,
   GET_USERS_SUCCESS,
@@ -20,6 +21,11 @@ export const usersReducer = (state = initState, { type, payload }) => {
         allUsers: payload,
       };
     case GET_USERS_FINISH:
+      return {
+        ...state,
+      };
+
+    case DELETE_USER:
       return {
         ...state,
       };

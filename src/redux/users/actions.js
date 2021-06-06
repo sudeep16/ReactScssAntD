@@ -1,6 +1,7 @@
+import thunk from "redux-thunk";
 import { init, finish, success } from "../../services/commonTypes";
 import { UserService } from "./api";
-import { GET_USERS } from "./constants";
+import { DELETE_USER, GET_USERS } from "./constants";
 
 const userService = new UserService();
 
@@ -13,6 +14,18 @@ export const getAllUsers = () => {
       dispatch(success(GET_USERS, response.data.data));
     } else {
       console.log("THere Has Been An Error");
+    }
+  };
+};
+
+export const deleteUser = (id) => {
+  return async (dispatch) => {
+    const response = await userService.deleteUser(id);
+    if (response.isSuccess) {
+      //   console.log(response.data.data);
+      dispatch(thunk(DELETE_USER, response.data.data));
+    } else if (!response.isSuccess) {
+      // dispatch(error(response.errorMessage));
     }
   };
 };

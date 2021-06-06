@@ -21,7 +21,6 @@ const columns = [
 
     render: (text, record) => (
       <Space size="middle">
-        <Button type="primary">Edit</Button>
         <Button type="primary" danger>
           Delete
         </Button>

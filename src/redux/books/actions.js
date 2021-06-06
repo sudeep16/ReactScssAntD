@@ -26,7 +26,7 @@ export const addBook = (values) => {
     if (response.isSuccess) {
       //   console.log(response.data.data);
       dispatch(success(ADD_BOOK, response.data.data));
-      window.location.href = "/adminDashboard";
+      // window.location.href = "/adminDashboard";
       //   history.push("/adminDashboard");
     } else if (!response.isSuccess) {
       // dispatch(error(response.errorMessage));

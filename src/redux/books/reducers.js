@@ -37,10 +37,11 @@ export const bookReducers = (state = initState, { type, payload }) => {
       };
 
     case ADD_BOOK_SUCCESS:
-      //   console.log("Payload: ", payload);
+      console.log("Payload: ", payload);
+      console.log("State: ", state);
       return {
         ...state,
-        allBooks: payload,
+        allBooks: [...state.allBooks, payload],
       };
 
     case ADD_BOOK_FINISH:

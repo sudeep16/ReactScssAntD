@@ -22,7 +22,7 @@ const BookListing = () => {
     dispatch(getAllAuthors());
   }, []);
 
-  // console.log("All Author", allAuthors);
+  console.log("All Author", allAuthors);
 
   const showDrawer = () => {
     setVisible(true);

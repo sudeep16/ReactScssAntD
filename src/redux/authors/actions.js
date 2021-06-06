@@ -15,3 +15,16 @@ export const getAllAuthors = () => {
     }
   };
 };
+
+export const addAuthor = () => {
+  return async (dispatch) => {
+    dispatch(init(GET_AUTHORS));
+    const response = await authorService.getAllAuthors();
+    dispatch(finish(GET_AUTHORS));
+    if (response.isSuccess) {
+      //   console.log(response.data.data);
+      dispatch(success(GET_AUTHORS, response.data.data));
+    } else if (!response.isSuccess) {
+    }
+  };
+};
