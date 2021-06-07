@@ -1,4 +1,5 @@
 import {
+  DELETE_ROLE,
   GET_ROLES_FINISH,
   GET_ROLES_INIT,
   GET_ROLES_SUCCESS,
@@ -20,6 +21,11 @@ export const rolesReducer = (state = initState, { type, payload }) => {
         allRoles: payload,
       };
     case GET_ROLES_FINISH:
+      return {
+        ...state,
+      };
+
+    case DELETE_ROLE:
       return {
         ...state,
       };

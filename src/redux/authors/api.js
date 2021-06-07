@@ -7,9 +7,15 @@ export class AuthorService {
     return data;
   }
 
-  addAuthor(bodu) {
+  addAuthor(body) {
     let url = `http://localhost:5000/api/author`;
     let data = postService(url, body);
+    return data;
+  }
+
+  deleteAuthor(id) {
+    let url = `http://localhost:5000/api/author/${id}`;
+    let data = postService(url, null, "DELETE");
     return data;
   }
 }

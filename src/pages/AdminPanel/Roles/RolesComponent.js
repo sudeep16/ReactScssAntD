@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Table, Space } from "antd";
 import { Button } from "antd";
+import { deleteRole } from "../../../redux/roles/actions";
 
 const RolesComponent = () => {
   const dispatch = useDispatch();
@@ -23,13 +24,17 @@ const RolesComponent = () => {
 
       render: (text, record) => (
         <Space size="middle">
-          <Button
-            type="primary"
-            danger
-            onClick={(e) => dispatch(deleteBook(record._id))}
+          <Popconfirm
+            title="Are you sure to delete this task?"
+            onConfirm={(e) => dispatch(deleteRole(record._id))}
+            onCancel={cancel}
+            okText="Yes"
+            cancelText="No"
           >
-            Delete
-          </Button>
+            <Button type="primary" danger>
+              Delete
+            </Button>
+          </Popconfirm>
         </Space>
       ),
     },
